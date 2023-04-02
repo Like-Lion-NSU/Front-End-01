@@ -22,7 +22,7 @@ Hyper Text Markup Language
     < title>Document< /title> **➡️ 웹브라우저 탭에 표시되는 텍스트 설정**   
 < /head>   
 **head 태그. 브라우저 화면에 나타나지 않음, HTML 문서에 대한 설정 정보**   
-< body>
+< body>   
 **body 태그. 실제 브라우저에 보여지는 내용**   
 < /body>   
 < /html>
