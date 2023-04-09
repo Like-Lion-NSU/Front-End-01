@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple ID 생성</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="more_info/apple.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <ul class="apple_menu">
+            <li><button class="menu_input"><i class="fa-brands fa-apple"></i></button></li>
+            <li><input type="button" value="스토어" class="menu_input"></li>
+            <li><input type="button" value="Mac" class="menu_input"></li>
+            <li><input type="button" value="iPad" class="menu_input"></li>
+            <li><input type="button" value="iPhone" class="menu_input"></li>
+            <li><input type="button" value="Watch" class="menu_input"></li>
+            <li><input type="button" value="AirPods" class="menu_input"></li>
+            <li><input type="button" value="악세서리" class="menu_input"></li>
+            <li><input type="button" value="고객지원" class="menu_input"></li>
+            <li><button class="menu_input"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+        </ul>
+    </header>
+
+    <section class="apple_id1">
+        <div class="login_left">
+        <h1>Apple ID</h1>
+        </div>
+        <div class="login_right">
+        <p>로그인</p>
+        <p>Apple ID 생성</p>
+        <p>FAQ</p>
+        </div>
+    </section>
+
+    <section class="apple_id2">
+        <ul>
+        <li><h1>Apple ID 생성</h1></li>
+        <li><p>하나의 Apple ID로 모든 Apple 서비스를 이용할 수 있습니다.</p></li>
+        </ul>
+    </section>
+
+    <section class="apple_id3">
+        <ul>
+            <div class="name">
+            <li class="apple_id_input"><input type="text" placeholder="성" required class="input lastname click"></li>
+            <li><input type="text" placeholder="이름" required class="input firstname click"></li>
+            </div>
+            <li><select name="color" class="input select click"><option value="kor">대한민국 +82</option></select></li>
+            <li><input type="tel" placeholder="전화번호" required class="input number click"></li>
+            <li><input type="date" required class="input date click"></li>
+            <li><input type="email" placeholder="name@example.com" required class="input email click"></li>
+            <li><input type="password" placeholder="암호" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$" required class="input password click"></li>
+            <li>번호 확인 방법 <input type="radio" name="check" class="click">문자메시지<input type="radio" name="check" class="click">음성메시지</li>
+            <li><input id="checkbox" type="checkbox" required class="click"> <label for="checkbox">광고수신동의</label> </li>
+            <li><input id="checkbox1" type="checkbox" required class="click"> <label for="checkbox1">개인정보수집동의</label></li>
+            <form method="post"><li><input type="submit" value="가입하기" class="submit"></li></form>
+        </ul>
+    </section>
+
+    <footer><a href="main.html" class="sign_up">이전 페이지</a></footer>
+
+    <script src="https://kit.fontawesome.com/851d0d4158.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
