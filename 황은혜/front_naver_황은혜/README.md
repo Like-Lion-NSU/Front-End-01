@@ -1,1 +1,1 @@
-<img src="front_naver_완성.png" alt="">
+<img width="100%" src="front_naver_완성.png" alt="">
