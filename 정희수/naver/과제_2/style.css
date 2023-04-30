@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0 10px 0 10px;
+}
+header{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+nav{
+    margin: 10px;
+}
+
+li{
+    margin: 10px;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 800px;
+    background-color: rgb(236, 236, 236);
+    position: relative;
+}
+.image{
+    position: absolute;
+}
