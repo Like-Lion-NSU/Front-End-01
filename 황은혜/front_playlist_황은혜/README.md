@@ -1,1 +1,1 @@
-<img src="image/front_playlist_완성.png" alt="" width="100%">
+<img width="100%" src="image/front_playlist_완성.png" alt="" />
