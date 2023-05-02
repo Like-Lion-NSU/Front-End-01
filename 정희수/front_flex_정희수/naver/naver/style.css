@@ -124,6 +124,9 @@ h3{
     background: #fff;
     border: none;
 }
+input:focus {
+    outline: none;
+}
 .int_2{
     margin: 10px 10px 0;
     width: 440px;
