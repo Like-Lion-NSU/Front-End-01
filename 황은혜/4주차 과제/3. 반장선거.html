@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 문법과제 3</title>
+</head>
+<body>
+    <script>
+        let votes = prompt("후보를 입력해주세요.").split(" "); // 후보 이름들를 입력받아서 배열로 만든다.
+        let result = {}; // 후보 이름과 득표수를 저장할 객체를 생성한다.
+
+        votes.forEach(function(vote) { // 배열의 모든 요소를 forEach()를 통해 반복하며 호출한다.
+        result[vote] = (result[vote] || 0) + 1; // 이름이 나왔을 경우 해당 후보의 득표수를 1 증가시킨다.
+        });
+
+        let winner = ""; // 당선자 변수를 초기화한다.
+        let bestVotes = ""; // 최대 득표수를 저장할 변수를 초기화한다.
+
+        for (let name in result) { //객체의 후보 이름을 반복한다.
+         if (result[name] > bestVotes) { // 현재 후보의 득표수가 최대 득표수보다 크면,
+            winner = name; // 당선자를 현재 후보로 변경합니다.
+            bestVotes = result[name]; // 최대 득표수를 현재 후보의 득표수로 변경한다.
+            }
+        }
+
+        console.log(`${winner}(이)가 총 ${bestVotes}표로 반장이 되었습니다.`); // 당선자와 최대 득표수를 출력합니다.
+
+    </script>
+</body>
+</html>

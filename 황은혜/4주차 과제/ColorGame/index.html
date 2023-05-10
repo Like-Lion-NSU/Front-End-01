@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>색깔 클릭 게임</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="blue-screen">
+            화면을 클릭하면 게임이 시작합니다.
+        </div>
+    <script>
+        const blueScreen = document.querySelector("#blue-screen");
+        const redScreen = document.createElement("div");
+        const greenScreen = document.createElement("div");
+        const blueMessage = "화면을 클릭하면 게임이 시작합니다.";
+        const redMessage = "초록색이 되면 클릭하세요";
+        const greenMessage = "클릭하세요";
+        const timeDelay = 1000 + Math.random() * 2000; // 랜덤 시간은 3초를 넘지 않는다.
+
+        let gameStartTime, greenScreenTimeout;
+
+        function showRedScreen() {
+        redScreen.style.width = "100vw";
+        redScreen.style.height = "100vh";
+        redScreen.style.backgroundColor = "red";
+        redScreen.style.position = "fixed";
+        redScreen.style.top = "0";
+        redScreen.style.left = "0";
+        redScreen.style.display = "none";
+        document.body.appendChild(redScreen);
+        }
+
+        function showGreenScreen() {
+        greenScreen.style.width = "100vw";
+        greenScreen.style.height = "100vh";
+        greenScreen.style.backgroundColor = "green";
+        greenScreen.style.position = "fixed";
+        greenScreen.style.top = "0";
+        greenScreen.style.left = "0";
+        greenScreen.style.display = "none";
+        document.body.appendChild(greenScreen);
+        }
+
+        function showBlueScreen() {
+        blueScreen.textContent = blueMessage;
+        }
+
+        function showRedMessage() {
+        blueScreen.style.display = "none";
+        redScreen.style.display = "block";
+        redScreen.textContent = redMessage;
+        greenScreenTimeout = setTimeout(function () {
+            showGreenMessage();
+            gameStartTime = new Date();
+        }, timeDelay);
+        }
+
+        function showGreenMessage() {
+        redScreen.style.display = "none";
+        greenScreen.style.display = "block";
+        greenScreen.textContent = greenMessage;
+        greenScreenTimeout = setTimeout(function () {
+            showBlueScreen();
+            const gameTime = new Date() - gameStartTime;
+            const resultMessage = `걸린 시간: ${gameTime / 1000}초`;
+            alert(resultMessage);
+        }, 3000);
+        }
+
+        function showHastyMessage() {
+        clearTimeout(greenScreenTimeout);
+        greenScreen.style.display = "none";
+        const hastyScreen = document.createElement("div");
+        hastyScreen.style.width = "100vw";
+        hastyScreen.style.height = "100vh";
+        hastyScreen.style.backgroundColor = "skyblue";
+        hastyScreen.style.position = "fixed";
+        hastyScreen.style.top = "0";
+        hastyScreen.style.left = "0";
+        hastyScreen.textContent = "성급하시군요.";
+        document.body.appendChild(hastyScreen);
+        setTimeout(function () {
+            document.body.removeChild(hastyScreen);
+            showBlueScreen();
+        }, 3000);
+        }
+
+        showRedScreen();
+        showGreenScreen();
+        showBlueScreen();
+        blueScreen.addEventListener("click", function () {
+        showRedMessage();
+        });
+
+        greenScreen.addEventListener("click", function () {
+        const gameTime = new Date() - gameStartTime;
+        const resultMessage = `걸린 시간: ${gameTime / 1000}초`;
+        alert(resultMessage);
+        clearTimeout(greenScreenTimeout);
+        showBlueScreen();
+        });
+
+        redScreen.addEventListener("click", function () {
+        showHastyMessage();
+        });
+    </script>
+    </body>
+</html>
