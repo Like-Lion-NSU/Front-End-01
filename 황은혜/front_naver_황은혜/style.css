@@ -52,9 +52,21 @@ h3 {
 
 input#sign_up-id {
     width: 442px;
-    text-align: right;
     padding-right: 15px;
 }
+
+.id_box {
+    position: relative;
+}
+
+.sign_up_id-email {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 15px;
+    opacity: 50%;
+}
+
 
 .pwd_box1 {
     position: relative;

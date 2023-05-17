@@ -1,0 +1,525 @@
+/* 전체 스타일 */
+
+/* 주요 색상에 대한 사용자 정의 CSS 변수 정의 */
+:root {
+	--primary-color: #e50914;
+	--dark-color: #141414;
+	--light-color: #f4f4f4;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: #000;
+	color: #999;
+}
+
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: #fff;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+p {
+	margin: 0.5rem 0;
+}
+
+img {
+	width: 100%;
+}
+
+.showcase {
+	width: 100%; /* 전체 너비를 100%로 설정 */
+	height: 93vh; /* 높이를 뷰포트의 93%로 설정 */
+	position: relative; /* 상대적 위치 설정 */
+	background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover; /* 배경 이미지 설정 */
+}
+
+.showcase::after {
+	content: ''; /* 가상 요소의 내용을 없음으로 설정 */
+	position: absolute; /* 절대적 위치 설정 */
+	top: 0; /* 위에서부터 위치를 0으로 설정 */
+	left: 0; /* 왼쪽에서부터 위치를 0으로 설정 */
+	width: 100%; /* 가로 너비를 100%로 설정 */
+	height: 100%; /* 세로 높이를 100%로 설정 */
+	z-index: 1; /* Z축 순서 설정 */
+	background: rgba(0, 0, 0, 0.6); /* 투명도가 있는 검정색 배경 설정 */
+	box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000; /* 내부 그림자 설정 */
+}
+
+.showcase-top {
+	position: relative; /* 상대적 위치 설정 */
+	z-index: 2; /* Z축 순서 설정 */
+	height: 90px; /* 높이를 90px로 설정 */
+}
+
+.showcase-top img {
+	width: 170px; /* 너비를 170px로 설정 */
+	position: absolute; /* 절대적 위치 설정 */
+	top: 50%; /* 위에서부터 위치를 50%로 설정 */
+	left: 50%; /* 왼쪽에서부터 위치를 50%로 설정 */
+	transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 설정 */
+	margin-left: 0; /* 왼쪽 여백을 0으로 설정 */
+}
+
+.showcase-top a {
+	position: absolute; /* 절대적 위치 설정 */
+	top: 50%; /* 위에서부터 위치를 50%로 설정 */
+	right: 0; /* 오른쪽에서부터 위치를 0으로 설정 */
+	transform: translate(-50%, -50%); /* 가운데 정렬을 위한 변형 설정 */
+}
+
+.showcase-content {
+	position: relative;
+	z-index: 2;
+	width: 65%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 9rem;
+}
+
+/* 쇼케이스 컨테이너를 나타낸다.
+z-index를 사용하여 다른 요소들보다 위에 표시됩니다. 
+너비는 65%로 설정되어 있으며, 자동으로 가운데 정렬됩니다. 
+내부 요소들은 컬럼 방향으로 배치되며, 텍스트는 가운데 정렬됩니다. */
+
+.showcase-content h1 {
+	font-weight: 700;
+	font-size: 5.2rem;
+	line-height: 1.1;
+	margin: 0 0 2rem;
+}
+
+/* 클래스 내부의 h1 요소 스타일을 정의한다.
+폰트의 굵기는 700으로 설정되어 있으며, 글꼴 크기는 5.2rem이다. 
+줄 높이는 1.1이고 하단 마진은 0, 상단과 좌우 마진은 2rem이다. */
+
+.showcase-content p {
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1.9rem;
+	line-height: 1.25;
+	margin: 0 0 2rem;
+}
+
+/* 클래스 내부의 p 요소 스타일을 정의한다.
+텍스트를 대문자로 변환한다. 색상은 흰색으로 설정되어 있다.
+폰트의 굵기는 400이고, 글꼴 크기는 1.9rem이다.
+줄 높이는 1.25로 설정되어 있고, 하단 마진은 0, 상단과 좌우 마진은 2rem이다. */
+
+.tabs {
+	background: var(--dark-color);
+	padding-top: 1rem;
+	border-bottom: 3px solid #3d3d3d;
+	border-right: none;
+}
+
+/* 탭을 나타낸다.
+배경은 --dark-color 변수로 지정되어 있으며, 위쪽 패딩은 1rem으로 설정되어 있다.
+아래쪽에는 3px 두께의 #3d3d3d 색상의 선이 그려지고, 오른쪽에는 선이 없다.
+*/
+
+.tabs .container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* 클래스 내부의 .container 요소 스타일을 정의한다.
+그리드 형태로 배치한다.
+3개의 열이 1fr 단위로 반복되도록 설정한다.
+요소들을 수직과 수평으로 가운데 정렬하며, 텍스트는 가운데 정렬된다. */
+
+.tabs p {
+	font-size: 1.2rem;
+	padding-top: 0.5rem;
+}
+
+/* 클래스 내부의 p 요소 스타일을 정의한다.
+글꼴 크기는 1.2rem으로 설정되고, 상단 패딩은 0.5rem이다. */
+
+.tabs .container > div {
+	padding: 1.5rem 0;
+}
+
+/* 클래스 내부의 .container 요소의 자식 요소인 div의 스타일을 정의한다.
+위쪽과 아래쪽 패딩은 각각 1.5rem이다. */
+
+.tabs .container > div:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+/* 클래스 내부의 .container 요소의 자식 요소인 div가 호버되었을 때의 스타일을 정의한다.
+글꼴 색상을 흰색으로 변경하고, 커서를 포인터로 변경한다. */
+
+.tab-border {
+	border-bottom: var(--primary-color) 4px solid;
+}
+
+.tab-content {
+	padding: 3rem 0;
+	background: #000;
+	color: #fff;
+}
+
+/* .tab-content 클래스는 탭의 내용을 나타낸다.
+위쪽과 아래쪽 패딩은 각각 3rem으로 설정되고, 배경은 검은색이며, 글꼴 색상은 흰색이다. */
+
+/* Hide initial content */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+	display: none;
+	opacity: 0;
+}
+
+/* 초기에 숨겨진 상태로 표시되며, 투명도는 0으로 설정된다. */
+
+.show {
+	display: block !important;
+	opacity: 1 !important;
+	transition: all 1000 ease-in;
+}
+
+/* 표시되는 요소를 나타낸다.
+!important를 사용하여 우선 순위를 높이고, display 속성을 block으로 설정하고 투명도를 1로 설정한다.
+트랜지션 효과를 적용한다. */
+
+#tab-1-content .tab-1-content-inner {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+
+/* #tab-1-content 내부의 .tab-1-content-inner 요소 스타일을 정의한다.
+그리드 형태로 배치한다.
+grid-template-columns 속성을 사용하여 2개의 열이 1fr 단위로 반복되도록 설정한다.
+grid-gap 속성을 사용하여 요소들 사이의 간격을 2rem으로 설정한다.
+요소들을 수직과 수평으로 가운데 정렬하며, 정렬은 중앙으로 설정된다. */
+
+#tab-2-content .tab-2-content-top {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+/* #tab-2-content 내부의 .tab-2-content-top 요소 스타일을 정의한다.
+그리드 형태로 배치합니다.
+grid-template-columns 속성을 사용하여 2개의 열이 2fr와 1fr의 비율로 설정되도록 한다.
+grid-gap 속성을 사용하여 요소들 사이의 간격을 1rem으로 설정한다.
+요소들을 수직과 수평으로 가운데 정렬하며, 정렬은 중앙으로 설정된다. */
+
+#tab-2-content .tab-2-content-bottom {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	text-align: center;
+}
+
+/* #tab-2-content 내부의 .tab-2-content-bottom 요소 스타일을 정의한다.
+위쪽에 2rem의 여백이 추가된다.
+그리드 형태로 배치한다.
+grid-template-columns 속성을 사용하여 3개의 열이 1fr 단위로 반복되도록 설정한다.
+grid-gap 속성을 사용하여 요소들 사이의 간격을 2rem으로 설정한다.
+텍스트는 가운데 정렬된다. */
+
+.table {
+	width: 100%;
+	margin-top: 2rem;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* .table 클래스에 대한 스타일을 정의한다.
+너비는 100%로 설정되며, 위쪽 여백은 2rem으로 설정된다.
+테이블의 셀 간격을 0으로 설정하고, 셀의 경계를 병합한다. */
+
+.table thead th {
+	text-transform: uppercase;
+	padding: 0.8rem;
+}
+
+/* 테이블의 thead 요소 내의 th 요소에 대한 스타일을 정의한다.
+텍스트는 대문자로 변환되며, 위쪽과 아래쪽 여백은 0.8rem으로 설정된다. */
+
+.table tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+/* 테이블의 tbody 요소에 대한 스타일을 정의한다.
+테이블의 내용을 그룹으로 표시하며, 수직 정렬은 중앙으로 설정된다.
+테이블의 경계 색상은 상속된 값으로 설정된다. */
+
+.table tbody tr td {
+	color: #999;
+	padding: 0.8rem 1.2rem;
+	text-align: center;
+}
+
+/* 테이블의 tbody 내의 각 행(tr)의 셀(td)에 대한 스타일을 정의한다.
+텍스트 색상은 #999로 설정되며, 위쪽과 아래쪽 여백은 0.8rem, 좌우 여백은 1.2rem으로 설정된다.
+텍스트는 가운데 정렬된다. */
+
+.table tbody tr td:first-child {
+	text-align: left;
+}
+
+/* 테이블의 tbody 내의 각 행(tr)의 첫 번째 셀(td)에 대한 스타일을 정의한다.
+텍스트는 왼쪽 정렬된다. */
+
+.table tbody tr:nth-child(odd) {
+	background: #222;
+}
+
+/* 테이블의 tbody 내의 홀수 번째 행에 대한 스타일을 정의한다.
+배경색은 #222로 설정된다. */
+
+.footer {
+	max-width: 70%;
+	margin: 1rem auto;
+	overflow: auto;
+}
+
+.footer,
+.footer a {
+	color: #999;
+	font-size: 0.9rem;
+}
+
+.footer p {
+	margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+}
+
+.footer li {
+	line-height: 1.9;
+}
+
+.footer .lang-select {
+	margin-top: 2rem;
+	color: #999;
+	background-color: #000;
+	background-image: none;
+	border: 1px solid #333;
+	padding: 1rem 1.2rem;
+	border-radius: 5px;
+}
+
+/* .footer 클래스에 .footer 클래스 내의 요소에 대한 스타일을 정의한다. */
+
+.container {
+	max-width: 70%;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+
+/* .container 클래스에 대한 스타일을 정의한다. */
+
+.text-xl {
+	font-size: 2rem;
+}
+
+.text-lg {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.text-md {
+	margin-bottom: 1.5rem;
+	font-size: 1.2rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-dark {
+	color: #999;
+}
+
+/* .text 클래스에 대한 스타일을 정의한다. */
+
+.btn {
+	display: inline-block;
+	background: var(--primary-color);
+	color: #fff;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	margin-right: 0.5rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+	border-radius: 2px;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.btn-rounded {
+	border-radius: 5px;
+}
+
+.btn-xl {
+	font-size: 2rem;
+	padding: 1.5rem 2.1rem;
+	text-transform: uppercase;
+}
+
+.btn-lg {
+	font-size: 1rem;
+	padding: 0.8rem 1.3rem;
+	text-transform: uppercase;
+}
+
+.btn-icon {
+	margin-left: 1rem;
+}
+
+/* .btn 클래스에 .btn 클래스 내의 요소에 대한 스타일을 정의한다. */
+
+@media (max-width: 960px) {
+
+		.showcase {
+		height: 70vh;
+	}
+
+	.hide-sm {
+		display: none;
+	}
+
+	.showcase-top img {
+		top: 30%;
+		left: 5%;
+		transform: translate(0);
+	}
+
+	.showcase-content h1 {
+		font-size: 3.7rem;
+		line-height: 1;
+	}
+
+	.showcase-content p {
+		font-size: 1.5rem;
+	}
+
+	.footer .footer-cols {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.btn-xl {
+		font-size: 1.5rem;
+		padding: 1.4rem 2rem;
+		text-transform: uppercase;
+	}
+
+	.text-xl {
+		font-size: 1.5rem;
+	}
+
+	.text-lg {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+	}
+
+	.text-md {
+		margin-bottom: 1rem;
+		font-size: 1.2rem;
+	}
+}
+
+/* 반응형 웹 디자인에 사용되는 미디어 쿼리이다.
+화면 너비 960px 이하일 때에만 해당하는 스타일을 적용하는 역할을 한다. */
+
+@media (max-width: 700px) {
+	.showcase::after {
+		background: rgba(0, 0, 0, 0.6);
+		box-shadow: inset 80px 80px 150px #000000, inset -80px -80px 150px #000000;
+	}
+
+	.showcase-content h1 {
+		font-size: 2.5rem;
+		line-height: 1;
+	}
+
+	.showcase-content p {
+		font-size: 1rem;
+	}
+
+	#tab-1-content .tab-1-content-inner {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	#tab-2-content .tab-2-content-top {
+		display: block;
+		text-align: center;
+	}
+
+	#tab-2-content .tab-2-content-bottom {
+		margin-top: 2rem;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2rem;
+		text-align: center;
+	}
+
+	.btn-xl {
+		font-size: 1rem;
+		padding: 1.2rem 1.6rem;
+		text-transform: uppercase;
+	}
+}
+
+/* 반응형 웹 디자인에 사용되는 미디어 쿼리이다.
+화면 너비 700px 이하일 때에만 해당하는 스타일을 적용하는 역할을 한다. */
+
+@media(max-height: 600px) {
+  .showcase-content {
+	margin-top: 3rem;
+}
+}
+
+/* 반응형 웹 디자인에 사용되는 미디어 쿼리이다.
+화면 너비 600px 이하일 때에만 해당하는 스타일을 적용하는 역할을 한다. */
